@@ -1,8 +1,10 @@
 
 import datetime
+from time import sleep
+
 
 class ATM():
-    def __init__(self, balance, bank_name,):
+    def __init__(self, balance, bank_name):
         self.balance = balance
         self.bank_name = bank_name
         self.withdrawals_list = []
@@ -10,15 +12,14 @@ class ATM():
     def withdraw(self, request):
         br = '-'*30
 
-        print (br)
+        print(br)
         print('<<< Welcome to ' + str(self.bank_name) + ' >>>')
         print('Your Current balance is  ' + str(self.balance))
-        print (br)
+        print(br)
 
         if request > self.balance:
             print('Can\'t give you all this money !!')
             return self.balance
-
 
         elif request < 0:
             print('More than zero plz!!')
@@ -53,8 +54,9 @@ class ATM():
     def show_withdrawals(self):
         for withdrawal in self.withdrawals_list:
 
-            print ('Your withdraw list is   ' + str(withdrawal))
-            #+ datetime.datetime.now().strftime('%d-%m-%y'))
+            print ('Your withdraw list is   ' + str(withdrawal)
+            + datetime.datetime.now().strftime('%a, %d %b %Y %H:%M:%S'))
+            sleep(5)
 
 
 
