@@ -54,8 +54,8 @@ class ATM():
     def show_withdrawals(self):
         for withdrawal in self.withdrawals_list:
 
-            print ('Your withdraw list is   ' + str(withdrawal)
-            + datetime.datetime.now().strftime('%a, %d %b %Y %H:%M:%S'))
+            print ('Your withdraw list is   ' + str(withdrawal) + ' '
+            + datetime.datetime.now().strftime('%a-%d-%b-%Y %H:%M:%S'))
             sleep(5)
 
 
