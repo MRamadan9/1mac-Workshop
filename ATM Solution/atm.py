@@ -7,7 +7,9 @@ class ATM():
     def __init__(self, balance, bank_name):
         self.balance = balance
         self.bank_name = bank_name
+        self.withdrawals_time_list=[]
         self.withdrawals_list = []
+        
 
     def withdraw(self, request):
         br = '-'*30
@@ -26,27 +28,29 @@ class ATM():
 
         else:
             self.withdrawals_list.append(request)
+            self.withdrawals_time_list.append(datetime.datetime.now().strftime('%a-%d-%b-%Y %H:%M:%S'))
             self.balance -= request
+            time = datetime.datetime.now().strftime('%a-%d-%b-%Y %H:%M:%S')
             while request > 0:
 
                 if request >= 100:
                     request -= 100
-                    print('give 100')
+                    print('give 100 ' + time)
 
                 elif request >= 50:
                     request -= 50
-                    print('give 50')
+                    print('give 50 ' + time)
 
                 elif request >= 10:
                     request -= 10
-                    print('give 10')
+                    print('give 10 ' + time)
 
                 elif request >= 5:
                     request -= 5
-                    print('give 5' )
+                    print('give 5  ' + time)
 
                 elif request < 5:
-                    print('give ' + str(request))
+                    print('give ' + str(request) + '  ' + time) 
                     request = 0
             print (br)
         return self.balance
@@ -54,8 +58,7 @@ class ATM():
     def show_withdrawals(self):
         for withdrawal in self.withdrawals_list:
 
-            print ('Your withdraw list is   ' + str(withdrawal) + ' '
-            + datetime.datetime.now().strftime('%a-%d-%b-%Y %H:%M:%S'))
+            print ('Your withdraw list is   ' + str(withdrawal))
             sleep(5)
 
 
@@ -67,7 +70,7 @@ balance2 = 1000
 atm1 = ATM(balance1,'Smart Bank', )
 atm2 = ATM(balance2, 'Baraka Bank')
 
-atm1.withdraw(200)
+atm1.withdraw(277)
 atm1.show_withdrawals()
 atm1.withdraw(800)
 atm1.show_withdrawals()
