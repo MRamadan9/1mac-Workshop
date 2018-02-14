@@ -4,20 +4,20 @@ class MemberStore:
 
 
     def get_all(self):
-        print self.members
+        return MemberStore.members
 
     def add(self, member):
-        print self.members.append(member)
+        MemberStore.members.append(member)
 
 
 class PostStore:
     posts = []
 
     def get_all(self):
-        print self.posts
+        return PostStore.posts
 
     def add(self, post):
-        print self.posts.append(post)
+        PostStore.posts.append(post)
 
     
 

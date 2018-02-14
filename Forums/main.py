@@ -27,7 +27,7 @@ member_store = store.MemberStore()
 member_store.add(member1)
 member_store.add(member2)
 
-member_store.get_all()
+print(member_store.get_all())
 
 post_store = store.PostStore()
 
@@ -35,4 +35,4 @@ post_store.add(post1)
 post_store.add(post2)
 post_store.add(post3)
 
-post_store.get_all()
+print(post_store.get_all())
