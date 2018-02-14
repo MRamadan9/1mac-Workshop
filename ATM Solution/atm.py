@@ -7,7 +7,7 @@ class ATM():
     def __init__(self, balance, bank_name):
         self.balance = balance
         self.bank_name = bank_name
-        self.withdrawals_time_list=[]
+        #self.withdrawals_time_list=[]
         self.withdrawals_list = []
         
 
@@ -28,7 +28,7 @@ class ATM():
 
         else:
             self.withdrawals_list.append(request)
-            self.withdrawals_time_list.append(datetime.datetime.now().strftime('%a-%d-%b-%Y %H:%M:%S'))
+            #self.withdrawals_time_list.append(datetime.datetime.now().strftime('%a-%d-%b-%Y %H:%M:%S'))
             self.balance -= request
             time = datetime.datetime.now().strftime('%a-%d-%b-%Y %H:%M:%S')
             while request > 0:
