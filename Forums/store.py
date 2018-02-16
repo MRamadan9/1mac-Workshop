@@ -22,8 +22,8 @@ class MemberStore:
           return True
       
     def delete(self, id):
-        member = self.get_by_id(id)
-        self.members.remove(member)
+        remove_member = self.get_by_id(id)
+        self.members.remove(remove_member)
 
 
 class PostStore:
